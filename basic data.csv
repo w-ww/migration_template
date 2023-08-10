@@ -1,0 +1,520 @@
+﻿Field name,Importance,Field Description,Sample data
+Product Number,mandatory for sheet,"Product Number*
+
+A key that uniquely identifies the product.
+
+Type: Text
+Length: 80",MIG_TG001
+Product Type,mandatory for sheet,"Product Type*
+
+Key that assigns the product to a group of products such as raw product, finished product or trading goods.
+
+Type: Text
+Length: 80",Trading goods (HAWA)
+Product Group,,"Product Group
+
+Key that you use to group together several products or services with the same attributes, and to assign them to a particular product group.
+
+Type: Text
+Length: 80",Trading Materials(L001)
+Description,mandatory for sheet,"Description*
+
+Text that describes the product in more detail.
+Note: You can maintain additional descriptions (for languages other than those provided on the 'Basic Data' sheet).
+
+Type: Text
+Length: 40",Trading good 001
+Language Key,mandatory for sheet,"Language Key*
+
+Please provide the language for the product description.
+
+
+
+Type: Text
+Length: 80",English(EN)
+Base Unit of Measure (ISO Format),mandatory for sheet,"Base Unit of Measure (ISO Format)*
+
+Unit of measure in which stocks of the product are managed. The system converts all the quantities you enter in other units of measure (alternative units of measure) to the base unit of measure. Note: define your alternative units of measure in sheet 'Alternative Unit of Measure'.
+
+Type: Text
+Length: 80",Piece(PCE)
+Change Number,,"Change Number
+
+Number used to uniquely identify a change master record.
+
+Type: Text
+Length: 80",
+Revision Level,,"Revision Level
+
+Indicates a product or document's change status in addition to the change number.
+
+Type: Text
+Length: 80",
+GTIN,,"GTIN
+
+The GTIN on the Basic Data sheet always relates to the base unit of measure. Note: if you have additional GTIN's for this unit please enter them on the Additional GTIN sheet. The GTIN entered here is always the Main GTIN.
+With internal number assignment, you enter the GTIN category but not a GTIN.
+
+Type: Text
+Length: 18",
+GTIN Category,,"GTIN Category
+
+The EAN category defines the following attributes of the corresponding EAN:
+Type/method of number assignment (internal and/or external number assignment) and details as to whether alphanumerical EANs are allowed
+Check-digit algorithm that checks whether a check digit is required
+Prefix (for perishables EANs)
+Length of the EAN.
+
+Type: Text
+Length: 80",
+Division,,"Division
+
+A way of grouping products, or services. The system uses divisions to determine the sales areas and the business areas for a product, or service. Please maintain the division for all sales relevant products.
+
+Type: Text
+Length: 80",
+Old Product Number,,"Old Product Number
+
+Number under which you have managed the product so far or still manage it, for example, in another system or in a card index.
+The maximum length of field Old Product Number is identical with the defined length for product numbers in your system.
+
+Type: Text
+Length: 40",
+Batch Management Required Ind.,,"Batch Management Required Ind.
+
+This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+
+Specifies whether the product is managed in batches ('X') or not (<blank>).
+Note: to assign the batch class to your product please use migration object 'Material classification'.
+
+Type: Text
+Length: 1",
+Valid From,,"Valid From
+
+Date indicating until when the product is valid. This date must not be later than the beginning of the listing periods.
+
+
+Type: Date",
+Competitor,,"Competitor
+
+Customer number of the competitor. The competitor number in the product master record serves to identify a competitive product as that of a particular competitor.
+
+Type: Text
+Length: 80",
+Industry Standard Description,,"Industry Standard Description
+
+Description of the product in accordance with the appropriate industry standard (such as ANSI or ISO). This field is purely for information.
+
+Type: Text
+Length: 18",
+Size/Dimensions,,"Size/Dimensions
+
+Text field that you can use as you like, for example, to record the size or dimensions of the product. The data you enter is merely for information and is not used by the system.
+
+Type: Text
+Length: 32",
+Laboratory / Design Office,,"Laboratory / Design Office
+
+Key for the design office, laboratory, or laboratory worker responsible.
+
+Type: Text
+Length: 80",
+External Product Group,,"External Product Group
+
+Key that you can use to assign the product to an external product group or to a product group determined according to external systematics.
+
+Type: Text
+Length: 80",Standard item(NORM)
+General Item Category Group,,"General Item Category Group
+
+Products grouping that helps the system to determine item categories during sales document processing.
+
+Type: Text
+Length: 80",
+Authorization Group,,"Authorization Group
+
+The authorization group enables you protect access to certain objects.
+
+Type: Text
+Length: 4",
+Cross-Plant Product Status,,"Cross-Plant Product Status
+
+The product status determines how a product is handled in different applications and in business operations (for example, purchasing, products planning, usage in bills of material ..). If a product has a product status, the system will issue either a warning or an error message (depending on which status you have chosen) if the product is used.
+Note: The cross-plant product status restricts the usability of the product for all plants. Please see further information in the migration object documentation under Mapping instructions.
+
+Type: Text
+Length: 80",
+Valid-From Date,,"Valid-From Date
+
+Date from which the cross-plant product status is valid.
+
+Type: Date",
+Level of Explicitness for Serial Number,,"Level of Explicitness for Serial Number
+
+Level on which the serial number must be unique.
+
+Type: Text
+Length: 80",
+Quality Manag. in Procurement Is Active,,"Quality Manag. in Procurement Is Active
+
+This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+Note: This field must only be filled if there will be a related Quality Info record existing in the system. If the fields are filled and the QIR is missing, the business process will run into an error.
+
+Type: Text
+Length: 1",
+ANP Code,,"ANP Code
+
+For Brazil only !
+Identifies the products that are controlled by the Brazilian Oil Agency.
+
+Type: Text
+Length: 80",
+Gross Weight,,"Gross Weight
+
+Gross weight expressed in the unit of weight specified by you in the Unit of weight field.
+The system can use the gross weight at a later stage, depending on what kind of capacity check you run, to check storage bin capacity for warehouse management purposes.
+
+Type: Number
+Length: 13
+Decimal: 3",1.000
+Net Weight,,"Net Weight
+
+Net weight expressed in the unit of weight specified by you in the Unit of weight field.
+
+Type: Number
+Length: 13
+Decimal: 3",0.900
+Unit of Weight (ISO Format),,"Unit of Weight (ISO Format)
+
+Unit referring to the gross weight or net weight of the product.
+If a product is created with sales data, the field unit of weight gets mandatory. Please provide an entry in this field or a default unit of weight is defined in product groups settings.
+
+
+Type: Text
+Length: 80",Gram(GRM)
+Length,,"Length
+
+Length of the product or its packaging, measured in the unit of dimension.
+
+Type: Number
+Length: 13
+Decimal: 3",0.000
+Width,,"Width
+
+Width of the product or its packaging, measured in the unit of dimension.
+
+Type: Number
+Length: 13
+Decimal: 3",0.000
+Height,,"Height
+
+Height of the product or its packaging, measured in the unit of dimension.
+
+Type: Number
+Length: 13
+Decimal: 3",0.000
+Unit for Length/Width/Height(ISO Format),,"Unit for Length/Width/Height(ISO Format)
+
+Unit in which the dimensions of length, breadth, and height of a product or its packaging are measured.
+
+Type: Text
+Length: 80",
+Volume,,"Volume
+
+
+Space that the product occupies per unit of volume. The volume refers to the unit specified in the ""Volume unit"" field. The volume and its unit always refer to the base unit of measure.
+
+Type: Number
+Length: 13
+Decimal: 3",
+Volume Unit,,"Volume Unit
+
+If you specify a volume, you have to enter the corresponding volume unit here.
+
+Type: Text
+Length: 80",
+Capacity Usage,,"Capacity Usage
+
+Type: Number
+Length: 15
+Decimal: 3",
+Compliance Relevant,,"Compliance Relevant
+
+Indicates whether the product needs to be assessed for Compliance.
+
+Type: Text
+Length: 80",
+Product Is Configurable,,"Product Is Configurable
+
+This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+Indicator that determines whether the product is configurable. If this indicator is set, you can assign a variant class to the product, making it possible to use it as a configurable product. Consider: if you are dealing with product type 'KMAT' the system will set this indicator automatically in the product master.
+This is described in detail in the migration object documentation.
+
+Type: Text
+Length: 1",
+Order Unit of Measure (ISO Format),,"Order Unit of Measure (ISO Format)
+
+Enter a value in this field only if you want to use a unit of measure differing from the base unit of measure.
+
+Type: Text
+Length: 80",
+Purchasing Value Key,,"Purchasing Value Key
+
+Key defining the reminder days and tolerance limits valid, as well as the shipping instructions and order acknowledgment requirement of the product for Purchasing.
+
+Type: Text
+Length: 80",
+State of Variable Purchase Order Unit,,"State of Variable Purchase Order Unit
+
+Activation of the variable purchase order unit.
+The information from the field in the product master record is adopted in the purchasing info record. In the purchase order and in the source list, you can enter an order unit that differs from the one in the purchasing info record. If you wish to specify a different order unit for a requisition, you must assign a source with a different order unit to the requisition. The field also determines whether you work with conditions for each order unit.
+
+Type: Text
+Length: 80",
+Transportation Group,,"Transportation Group
+
+A grouping of products that share the same route and transportation requirements.
+The transportation group is product specific and therefore valid for all plants (where the loading group can be maintained at plant level). Transportation groups are used for automatic route scheduling during requirements.
+
+Type: Text
+Length: 80",On pallets(0001)
+Cross-Distribution Chain Product Status,,"Cross-Distribution Chain Product Status
+
+Indicates whether the product may be used in individual functions in Sales and Distribution for all distribution chains.
+The cross-distribution-chain product status restricts the usability of the product for all the distribution chains, that is, it defines whether a warning or error message is displayed if you include the product in a particular function.
+
+Type: Text
+Length: 80",
+Valid From Date for Status,,"Valid From Date for Status
+
+Date from which the cross-distribution-chain product status is valid.
+
+Type: Date",
+Billing Cycle,,"Billing Cycle
+
+Defines periodic billing periods and specifies the following:
+- The frequency of a billing period
+- The length of a billing period (defined by a start and end date)
+- The rule for determining the period end
+
+Type: Text
+Length: 80",
+Billing Cycle Determination Rule,,"Billing Cycle Determination Rule
+
+Type: Text
+Length: 80",
+Assignment Schema,,"Assignment Schema
+
+Type: Text
+Length: 80",
+Product Group: Packaging Materials,,"Product Group: Packaging Materials
+
+Groups together products that require similar packaging products.
+
+Type: Text
+Length: 80",
+Packaging Product Type,,"Packaging Product Type
+
+Enter a code for a grouping of similar products, such as crates, trucks or pallets.
+
+Type: Text
+Length: 80",
+Allowed Packaging Weight,,"Allowed Packaging Weight
+
+Maximum weight of other products that are packed in this packaging product.
+
+Type: Number
+Length: 13
+Decimal: 3",
+Unit of Allowed Packaging Weight,,"Unit of Allowed Packaging Weight
+
+Unit referring to the allowed packaging weight of the product. If you specify an allowed packaging weight, you must enter the corresponding unit of weight here. Please note that the entered value needs to be mapped to a valid ISO code value after uploading the file and starting the transfer process.
+
+Type: Text
+Length: 80",
+Excess Weight Tolerance for HU,,"Excess Weight Tolerance for HU
+
+Specifies the tolerance limit for exceeding the maximum weight allowed for a particular packaging material during packing.
+
+Type: Number
+Length: 3
+Decimal: 1",
+Allowed Packaging Volume,,"Allowed Packaging Volume
+
+Maximum volume of other products that are packed in this packaging product.
+
+
+
+Type: Number
+Length: 13
+Decimal: 3",
+Unit of Allowed Packaging Volume,,"Unit of Allowed Packaging Volume
+
+Unit referring to the allowed packaging volume of the product. If you specify an allowed packaging volume, you must enter the corresponding volume unit here. Please note that the entered value needs to be mapped to a valid ISO code value after uploading the file and starting the transfer process.
+
+Type: Text
+Length: 80",
+Packaging Product Is Closed Packaging,,"Packaging Product Is Closed Packaging
+
+For closed packaging products, during packing the total volume is not increased by the loading volume of the contents. This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+
+Type: Text
+Length: 1",
+Excess Volume Tolerance for HU,,"Excess Volume Tolerance for HU
+
+Specifies the tolerance limit for the maximum packing volume allowed for a particular packaging product.
+
+Type: Number
+Length: 3
+Decimal: 1",
+Period Indicator for Shelf Life,,"Period Indicator for Shelf Life
+
+Period Indicator for Shelf Life Expiration Date
+The period indicator specifies the unit of measurement for a period of time. Like day, week, month, year.
+
+Type: Text
+Length: 80",Day(D)
+Storage Conditions,,"Storage Conditions
+
+Indicates what storage conditions are required for the product.
+
+Type: Text
+Length: 80",
+Temperature Conditions Indicator,,"Temperature Conditions Indicator
+
+Indicates the temperature conditions in which the product should be stored.
+
+Type: Text
+Length: 80",
+Container Requirements,,"Container Requirements
+
+Key for the regulation that governs which type of container the product must be stored and shipped in.
+
+Type: Text
+Length: 80",
+Hazardous Product Number,,"Hazardous Product Number
+
+The hazardous product number indicates that the product is dangerous, making special precautions necessary for its storage and shipment.
+
+Type: Text
+Length: 40",
+Label Type,,"Label Type
+
+Determines the way labels are created. The label type specifies, for example, whether labels are preprinted by the supplier or created on a central printer.
+
+Type: Text
+Length: 80",
+Label Form,,"Label Form
+
+Determines the size and layout of the label. The label form specifies, for example, whether the label is an adhesive or a pin-on label.
+
+Type: Text
+Length: 80",
+Number of Goods Receipt/Issue Slips,,"Number of Goods Receipt/Issue Slips
+
+In the case of a goods receipt with reference to a purchase order or production order, the system automatically calculates the number of GR/GI slips to be printed for the product document item as a quotient from the goods receipt quantity and the quantity defined here.
+
+Type: Number
+Length: 13
+Decimal: 3",
+Indicator: Approved Batch Rec. Required,,"Indicator: Approved Batch Rec. Required
+
+This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+
+Type: Text
+Length: 1",
+Total Shelf Life,,"Total Shelf Life
+
+Period for which the product will keep in total, that is, from the date of production to the shelf life expiration date.
+The period (day, week, month, year) depends on the entry in the Period indicator field.
+
+Type: Number
+Length: 4",
+Minimum Remaining Shelf Life,,"Minimum Remaining Shelf Life
+
+Minimum amount of time for which the product must keep upon goods receipt for the goods receipt to be accepted by the system.
+
+The period (day, week, month, year) depends on the entry in the Period indicator field.
+
+
+Type: Number
+Length: 4",
+Indi. for the Shelf Life Expiration Date,,"Indi. for the Shelf Life Expiration Date
+
+Indicator for the shelf life expiration date or expiration date.
+In batch management, the shelf life expiration date or expiration date can be specified. You select the date type you want by using this indicator.
+
+Type: Text
+Length: 80",Expiration Date(B)
+Storage Percentage,,"Storage Percentage
+
+Percentage specifying how much of the minimum remaining shelf life must be left if the product is to be sent to another plant (such as a store) from a central plant (such as a distribution center).
+
+Type: Number
+Length: 3",
+Rounding Rule for Calculation of SLED,,"Rounding Rule for Calculation of SLED
+
+Example:
+Total shelf life in product master = 3
+Period indicator in product master = M (month)
+Production date, specified at goods receipt = 10.01.2016
+=> SLED = 10.01.2016 + 3 months = 10.04.2016
+
+Rounding indicator = MHD = 10.04.2016 (no rounding)
+Rounding indicator = '-' = 01.04.2016 (first day of month)
+Rounding indicator = '+' = 30.04.2016 (last day of month).
+
+
+Type: Text
+Length: 80",
+Handling Indicator,,"Handling Indicator
+
+Indicator that specifies how products are handled in the warehouse. The handling code could have the attribute Fragile, for example, and would therefore need to be stored in a special section of the warehouse.
+
+Type: Text
+Length: 80",
+Warehouse Product Group,,"Warehouse Product Group
+
+Groups products by warehousing points of view.
+
+Type: Text
+Length: 80",
+Handling Unit Type,,"Handling Unit Type
+
+Specifies the HU type of the packaging product used for creating handling units.
+
+Type: Text
+Length: 80",
+Indicator: Quality,,"Indicator: Quality
+
+You can use this indicator to set the quality view on client level active. For further information please refer to the migration object documentation.
+This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+
+
+Type: Text
+Length: 1",
+Indicator: Sales,,"Indicator: Sales
+
+You can use this indicator to set the sales view on client level active. For further information please refer to the migration object documentation.
+This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+
+Type: Text
+Length: 1",
+Indicator: Storage,,"Indicator: Storage
+
+You can use this indicator to set the storage view on client level active. For further information please refer to the migration object documentation.
+This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+
+Type: Text
+Length: 1",
+Indicator: Purchasing,,"Indicator: Purchasing
+
+You can use this indicator to set the purchasing view on client level active. For further information please refer to the migration object documentation.
+This is an indicator field. If the criterion is met, enter X. If not, leave the field empty.
+
+Type: Text
+Length: 1",
+OData,,"OData
+
+Type: Text
+Length: 20",
